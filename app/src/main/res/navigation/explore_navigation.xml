@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/explore_navigation"
+    app:startDestination="@id/exploreFragment">
+
+    <fragment
+        android:id="@+id/exploreFragment"
+        android:name="pl.ozodbek.complexbottomnavigation.ui.fragments.bottom_nav_fragments.explore_fragment.ExploreFragment"
+        android:label="fragment_explore"
+        tools:layout="@layout/fragment_explore" >
+        <action
+            android:id="@+id/action_exploreFragment_to_exploreExampleFragment"
+            app:destination="@id/exploreExampleFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/exploreExampleFragment"
+        android:name="pl.ozodbek.complexbottomnavigation.ui.fragments.bottom_nav_fragments.explore_fragment.ExploreExampleFragment"
+        android:label="fragment_explore_example"
+        tools:layout="@layout/fragment_explore_example" >
+        <action
+            android:id="@+id/action_exploreExampleFragment_to_exploreFragment"
+            app:destination="@id/exploreFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+           />
+    </fragment>
+</navigation>

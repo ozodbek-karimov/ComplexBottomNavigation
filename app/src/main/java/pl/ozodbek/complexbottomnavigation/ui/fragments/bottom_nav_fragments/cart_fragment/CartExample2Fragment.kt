@@ -1,0 +1,39 @@
+package pl.ozodbek.complexbottomnavigation.ui.fragments.bottom_nav_fragments.cart_fragment
+
+import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.View
+import pl.ozodbek.complexbottomnavigation.R
+import pl.ozodbek.complexbottomnavigation.databinding.FragmentCartExample2Binding
+import pl.ozodbek.complexbottomnavigation.databinding.FragmentCartExampleBinding
+import pl.ozodbek.complexbottomnavigation.databinding.FragmentContainerBinding
+import pl.ozodbek.complexbottomnavigation.util.activityFor
+import pl.ozodbek.complexbottomnavigation.util.getColorFragment
+import pl.ozodbek.complexbottomnavigation.util.onBackPressed
+import pl.ozodbek.complexbottomnavigation.util.popBackStack
+import pl.ozodbek.datastorepractice.util.oneliner_viewbinding.viewBinding
+
+class CartExample2Fragment : Fragment(R.layout.fragment_cart_example2) {
+
+    private val binding by viewBinding(FragmentCartExample2Binding::bind)
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        onBackPressed {
+            popBackStack()
+        }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        activityFor().setSupportActionBar(binding.toolbar)
+        activityFor().window?.navigationBarColor = getColorFragment(R.color.black)
+        activityFor().title = "Cart example 2"
+        binding.toolbar.setNavigationOnClickListener {
+            popBackStack()
+        }
+
+    }
+}

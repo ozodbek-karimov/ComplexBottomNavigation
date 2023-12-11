@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/root_navigation">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_navigation"
+    app:startDestination="@id/containerFragment">
+
+
+    <fragment
+        android:id="@+id/containerFragment"
+        android:name="pl.ozodbek.complexbottomnavigation.ui.fragments.container_fragment.ContainerFragment"
+        android:label="fragment_container"
+        tools:layout="@layout/fragment_container" />
 
 </navigation>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cart_navigation"
+    app:startDestination="@id/cartFragment">
+
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="pl.ozodbek.complexbottomnavigation.ui.fragments.bottom_nav_fragments.cart_fragment.CartFragment"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart">
+        <action
+            android:id="@+id/action_cartFragment_to_cartExampleFragment"
+            app:destination="@id/cartExampleFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popExitAnim="@anim/fade_out"/>
+    </fragment>
+    <fragment
+        android:id="@+id/cartExampleFragment"
+        android:name="pl.ozodbek.complexbottomnavigation.ui.fragments.bottom_nav_fragments.cart_fragment.CartExampleFragment"
+        android:label="fragment_cart_example"
+        tools:layout="@layout/fragment_cart_example">
+        <action
+            android:id="@+id/action_cartExampleFragment_to_cartFragment"
+            app:destination="@id/cartFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+          />
+        <action
+            android:id="@+id/action_cartExampleFragment_to_cartExample2Fragment"
+            app:destination="@id/cartExample2Fragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"/>
+    </fragment>
+    <fragment
+        android:id="@+id/cartExample2Fragment"
+        android:name="pl.ozodbek.complexbottomnavigation.ui.fragments.bottom_nav_fragments.cart_fragment.CartExample2Fragment"
+        android:label="fragment_cart_example2"
+        tools:layout="@layout/fragment_cart_example2" >
+        <action
+            android:id="@+id/action_cartExample2Fragment_to_cartExampleFragment"
+            app:destination="@id/cartExampleFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"/>
+    </fragment>
+</navigation>
