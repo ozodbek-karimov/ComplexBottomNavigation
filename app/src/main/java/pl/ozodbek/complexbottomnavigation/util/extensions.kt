@@ -20,25 +20,12 @@ import pl.ozodbek.complexbottomnavigation.R
 
 fun Fragment.hideBottomNavigation() {
     val bottomNavigationView = activityFor().findViewById<View>(R.id.bottomNavigationView)
-
-    bottomNavigationView.animate()
-        .translationY(bottomNavigationView.height.toFloat())
-        .alpha(0f)
-        .setDuration(50)
-        .setListener(null)
-        .withEndAction {
-            bottomNavigationView.gone()
-        }
+    bottomNavigationView.gone()
 }
 
 fun Fragment.showBottomNavigation() {
     val bottomNavigationView = activityFor().findViewById<View>(R.id.bottomNavigationView)
-    bottomNavigationView.animate().translationY(0f).alpha(1f)
-        .setDuration(50)
-        .setListener(null)
-        .withStartAction {
-            bottomNavigationView.show()
-        }
+    bottomNavigationView.show()
 }
 
 
@@ -125,7 +112,6 @@ fun Fragment.popBackStack() {
 }
 
 
-
 fun Fragment.activityFor(): AppCompatActivity {
     return requireActivity() as AppCompatActivity
 }
@@ -136,7 +122,6 @@ fun Fragment.containerNavController() =
 
 fun Fragment.rootNavController() =
     requireActivity().findNavController(R.id.fragmentContainerView)
-
 
 
 fun Fragment.getColorFragment(color: Int): Int {
